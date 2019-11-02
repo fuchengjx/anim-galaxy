@@ -10,9 +10,42 @@
   <meta http-equiv="expires" content="0">
   <title>星空图</title>
   <style>
-    * {padding: 0;margin: 0;}
-    body{ font-size: 16px ;background: #fff;padding: 20px;color: #4b565a;}
-    .page-header{padding: 5rem 6rem;margin: 0 auto; color: #fff; text-align: center; background-color: #159957; background-image: linear-gradient(120deg, #155799, #159957);}
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    body { 
+       font-size: 16px ;
+       background: #fff;
+       padding: 20px;
+       color: #4b565a;
+    }
+    .page-header {
+      display: block;
+      padding: 5rem 6rem;
+      margin: 0 auto; color: #fff; 
+      text-align: center; 
+      background-color: #159957; 
+      background-image: linear-gradient(120deg, #155799, #159957);
+    }
+    .page-header .btn{
+      display: inline-block;
+      margin-top: 2rem;
+      margin-bottom: 1rem;  color: rgba(255,255,255,0.7);  
+      background-color: rgba(255,255,255,0.08);  
+      border-color: rgba(255,255,255,0.2);  
+      border-style: solid;  
+      border-width: 1px;  border-radius: 0.3rem;  
+      transition: color 0.2s, background-color 0.2s, border-color 0.2s;
+      color: rgba(255,255,255,0.8);  
+      text-decoration: none;  background-color: rgba(255,255,255,0.2);  
+      border-color: rgba(255,255,255,0.3); 
+      padding: 0.75rem 1.4rem;
+      color: #ffffff;
+     }
+    .page-header .btn:hover{  
+      background-color: rgba(255,255,255,0.3);  
+    }
     .main {
       visibility: hidden;
     }
@@ -63,7 +96,7 @@
   </div>
   <main class="main">
 
-    <div class="canvas-container"  style="width: 1200px;height: 900px;position: relative;overflow: hidden;margin: 20px auto;">
+    <div class="canvas-container"  style="width: 1200px;height: 700px;position: relative;overflow: hidden;margin: 20px auto;">
       <canvas class="canvas-galaxy" id="galaxyCanvas" width="1200px" height="900px"></canvas>
       <div class="planet-wrap">
         <div class="planet planet-2"></div>
@@ -106,9 +139,6 @@
           starNumber: (starNumber == '') ? (3000) : (starNumber),
           starBaseNum: (starBaseNum == '') ? (3600) : (starBaseNum)
         }
-        // starArguments.starDensity = (starDensity == '') ? (1 / 300) : (starDensity)
-        // starArguments.starNumber = (starNumber == '') ? (3000) : (starNumber)
-        // starArguments.starBaseNum = (starBaseNum == '') ? (3600) : (starBaseNum)
 
         // 获取星河的参数
         let milkyStarDensity = document.getElementById("milky-star-density").value
@@ -128,6 +158,8 @@
         renderMilkyWay(document.getElementById('galaxyMilkyWay'), milkyArguments) // 星河
         renderConstellation(document.getElementById('constellationCanvas')) //星座
         nebulaAnim(document.getElementById('nebulaCanvas')) //黑洞
+        
+        document.querySelectorAll(".page-header")[0].style.display = 'none'
       })
     
   </script>

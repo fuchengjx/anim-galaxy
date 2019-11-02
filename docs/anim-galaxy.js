@@ -15,13 +15,6 @@ function renderGalaxy(galaxyCanvas, starArguments) {
   // let starBaseNum = parseInt(galaxyCanvasWidth * galaxyCanvasHeight * starDensity) // 大概出现的星星数量
   // let initStarNum = starBaseNum + Math.random() * 40 - 20 // 初始数量
   let starArr = []
-
-  // initStarNum = 10
-  // starBaseNum = 100
-  // starDensity = 0.5
-  console.log("星星密度 ", starDensity)
-  console.log(" 大概出现的星星数量", starBaseNum)
-  console.log("初始数量", initStarNum)
   
   // 新增一颗星星
   let addRandomStar = function () {
@@ -141,10 +134,6 @@ function renderMilkyWay(milkyWayCanvas, milkyArguments) {
   // let initStarNum = starBaseNum + Math.random() * 40 - 20 // 初始数量
   let starBaseNum = milkyArguments.milkyStarBaseNum
   let initStarNum = milkyArguments.milkyStarNumber
-  console.log("星星密度2 ", starDenst)
-  console.log(" 大概出现的星星数量2 ", starBaseNum)
-  console.log("初始数量2 ", initStarNum)
-  console.log("河道宽度 ", riverWidth)
   let starArr = []
   let addRandomStar = function () {
     if (starArr.length > starBaseNum * 1.5) return // 5成随机波动
