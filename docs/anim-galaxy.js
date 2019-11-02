@@ -2,17 +2,27 @@
  * 星空渲染
  * @param {object} galaxyCanvas 画布元素
  */
-function renderGalaxy (galaxyCanvas) {
+function renderGalaxy(galaxyCanvas, starArguments) {
   let galaxyCtx = galaxyCanvas.getContext('2d')
   let galaxyCanvasWidth = galaxyCanvas.clientWidth
   let galaxyCanvasHeight = galaxyCanvas.clientHeight
 
   // 整个星空的随机星星点点位置计算
-  let starDensity = 1 / 300 // 星星密度
-  let starBaseNum = parseInt(galaxyCanvasWidth * galaxyCanvasHeight * starDensity) // 大概出现的星星数量
-  let initStarNum = starBaseNum + Math.random() * 40 - 20 // 初始数量
+  // let starDensity = 1 / 300 // 星星密度
+  let starDensity = starArguments.starDensity
+  let starBaseNum = starArguments.starBaseNum
+  let initStarNum = starArguments.starNumber
+  // let starBaseNum = parseInt(galaxyCanvasWidth * galaxyCanvasHeight * starDensity) // 大概出现的星星数量
+  // let initStarNum = starBaseNum + Math.random() * 40 - 20 // 初始数量
   let starArr = []
 
+  // initStarNum = 10
+  // starBaseNum = 100
+  // starDensity = 0.5
+  console.log("星星密度 ", starDensity)
+  console.log(" 大概出现的星星数量", starBaseNum)
+  console.log("初始数量", initStarNum)
+  
   // 新增一颗星星
   let addRandomStar = function () {
     if (starArr.length > starBaseNum * 1.5) return // 5成随机波动
@@ -105,7 +115,7 @@ function renderGalaxy (galaxyCanvas) {
   }
 }
 
-function renderMilkyWay (milkyWayCanvas) {
+function renderMilkyWay(milkyWayCanvas, milkyArguments) {
   // 渲染星河
   let galaxyCtx = milkyWayCanvas.getContext('2d')
   let galaxyCanvasWidth = milkyWayCanvas.clientWidth
@@ -115,8 +125,10 @@ function renderMilkyWay (milkyWayCanvas) {
   milkyWayCanvas.style.backgroundImage = 'linear-gradient('+milkyWayDeg+'deg, rgba(255,255,255,0) 15%, rgba(255,255,255,0.05) 43%, rgba(255,255,255,0.09) 50%, rgba(255,255,255,0.05) 57%, rgba(255,255,255,0) 85%)'
 
   // 星河河道中随机星星位置计算
-  let starDenst = 1 / 80 // 星星密度
-  let riverWidth = 100 // 河道宽度
+  // let starDenst = 1 / 80 // 星星密度
+  // let riverWidth = 100 // 河道宽度
+  let starDenst = milkyArguments.milkyStarDensity // 星星密度
+  let riverWidth = milkyArguments.milkyRiverWidth // 河道宽度
   let riverLength = parseInt(Math.sqrt(galaxyCanvasWidth ** 2 + galaxyCanvasHeight ** 2))
   let riverAngle = Math.atan(galaxyCanvasHeight / galaxyCanvasWidth)
 
@@ -125,9 +137,14 @@ function renderMilkyWay (milkyWayCanvas) {
   mockCanvas.height = riverWidth
   let mockCtx = mockCanvas.getContext('2d')
 
-  let starBaseNum = parseInt(mockCanvas.width * mockCanvas.height * starDenst) // 大概出现的星星数量
-  let initStarNum = starBaseNum + Math.random() * 40 - 20 // 初始数量
-
+  // let starBaseNum = parseInt(mockCanvas.width * mockCanvas.height * starDenst) // 大概出现的星星数量
+  // let initStarNum = starBaseNum + Math.random() * 40 - 20 // 初始数量
+  let starBaseNum = milkyArguments.milkyStarBaseNum
+  let initStarNum = milkyArguments.milkyStarNumber
+  console.log("星星密度2 ", starDenst)
+  console.log(" 大概出现的星星数量2 ", starBaseNum)
+  console.log("初始数量2 ", initStarNum)
+  console.log("河道宽度 ", riverWidth)
   let starArr = []
   let addRandomStar = function () {
     if (starArr.length > starBaseNum * 1.5) return // 5成随机波动
@@ -135,7 +152,8 @@ function renderMilkyWay (milkyWayCanvas) {
       x: parseInt(Math.random() * mockCanvas.width), // 左偏移
       y: parseInt(Math.random() * mockCanvas.height), // 左偏移
       r: parseInt(Math.random() > 0.08 ? 1 : 2), // 半径
-      b: Math.random() > 0.5 ? Math.random() > 0.95 ? 0.3 : 0.25 : 0.2 // 随机亮度
+      // b: Math.random() > 0.5 ? Math.random() > 0.95 ? 0.3 : 0.25 : 0.2 // 随机亮度
+      b: Math.random() > 0.5 ? Math.random() > 0.95 ? 0.8 : 0.6 : 0.4 // 随机亮度
     }
     starArr.push(star)
     renderStar(star)
@@ -193,7 +211,7 @@ function renderConstellation (constellationCanvas) {
   let constellationCtx = constellationCanvas.getContext('2d')
   let canvasWidth = constellationCanvas.width
   let canvasHeight = constellationCanvas.height
-  /* let starArr = [
+   let starArr = [
     {x: 75, y: 5},
     {x: 75, y: 45},
     {x: 75, y: 95},
@@ -211,27 +229,27 @@ function renderConstellation (constellationCanvas) {
     {from: 1, to: 5},
     {from: 4, to: 6},
     {from: 5, to: 7}
-  ] */
+  ] 
 
-  let starArr = [
-    {x: 15, y: 15},
-    {x: 35, y: 55},
-    {x: 15, y: 95},
-    {x: 35, y: 135},
-    {x: 15, y: 175},
-    {x: 75, y: 215},
-    {x: 115, y: 195},
-    {x: 155, y: 215}
-  ]
-  let lines = [
-    {from: 0, to: 1},
-    {from: 1, to: 2},
-    {from: 2, to: 3},
-    {from: 3, to: 4},
-    {from: 4, to: 5},
-    {from: 5, to: 6},
-    {from: 6, to: 7}
-  ]
+  // let starArr = [
+  //   {x: 15, y: 15},
+  //   {x: 35, y: 55},
+  //   {x: 15, y: 95},
+  //   {x: 35, y: 135},
+  //   {x: 15, y: 175},
+  //   {x: 75, y: 215},
+  //   {x: 115, y: 195},
+  //   {x: 155, y: 215}
+  // ]
+  // let lines = [
+  //   {from: 0, to: 1},
+  //   {from: 1, to: 2},
+  //   {from: 2, to: 3},
+  //   {from: 3, to: 4},
+  //   {from: 4, to: 5},
+  //   {from: 5, to: 6},
+  //   {from: 6, to: 7}
+  // ]
 
   function render () {
     constellationCtx.clearRect(0, 0, canvasWidth, canvasHeight)

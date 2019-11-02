@@ -12,9 +12,9 @@
   <style>
     * {padding: 0;margin: 0;}
     body{ font-size: 16px ;background: #fff;padding: 20px;color: #4b565a;}
-    .page-header {
-      width: 1200px;
-      text-align: center;
+    .page-header{padding: 5rem 6rem;margin: 0 auto; color: #fff; text-align: center; background-color: #159957; background-image: linear-gradient(120deg, #155799, #159957);}
+    .main {
+      visibility: hidden;
     }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
@@ -23,9 +23,10 @@
 </head>
 
 <body>
-  <header class="page-header">
+  <div class="page-header">
     <h1>菜单栏</h1>
     <form class="form-inline">
+      <h3>星空背景参数</h3>
       <div class="form-group">
         <label for="star-density">星星密度</label>
         <input type="number" class="form-control" id="star-density" placeholder="0-0.05">
@@ -39,9 +40,28 @@
         <input type="number" class="form-control" id="star-base-num" placeholder="1000-5000">
       </div>
     </form>
+    <form class="form-inline">
+      <h3>星河背景参数</h3>
+      <div class="form-group">
+        <label for="milky-star-density">星星密度</label>
+        <input type="number" class="form-control" id="milky-star-density" placeholder="0-0.05">
+      </div>
+      <div class="form-group">
+        <label for="milky-star-number">星星初始数量</label>
+        <input type="number" class="form-control" id="milky-star-number" placeholder="3000-5000">
+      </div>
+      <div class="form-group">
+        <label for="milky-star-base-num">最后出现的星星数量</label>
+        <input type="number" class="form-control" id="milky-star-base-num" placeholder="3000-10000">
+      </div>
+      <div class="form-group">
+        <label for="milky-river-width">星河宽度</label>
+        <input type="number" class="form-control" id="milky-river-width" placeholder="100-200">
+      </div>
+    </form>
     <button class="btn btn-default">确定</button>
-  </header>
-  <main >
+  </div>
+  <main class="main">
 
     <div class="canvas-container"  style="width: 1200px;height: 900px;position: relative;overflow: hidden;margin: 20px auto;">
       <canvas class="canvas-galaxy" id="galaxyCanvas" width="1200px" height="900px"></canvas>
@@ -76,10 +96,40 @@
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script type="text/javascript" src="anim-galaxy.js"></script>
   <script type="text/javascript">
-      renderGalaxy(document.getElementById('galaxyCanvas')) // 星空背景
-      renderMilkyWay(document.getElementById('galaxyMilkyWay')) // 星河
-      renderConstellation(document.getElementById('constellationCanvas')) //星座
-      nebulaAnim(document.getElementById('nebulaCanvas')) //黑洞
+      document.getElementsByClassName("btn-default")[0].addEventListener("click", function () {
+        // 获取星空的参数
+        let starDensity = document.getElementById("star-density").value
+        let starNumber = document.getElementById("star-number").value
+        let starBaseNum = document.getElementById("star-base-num").value
+        let starArguments = {
+          starDensity: (starDensity == '') ? (1 / 300) : (starDensity),
+          starNumber: (starNumber == '') ? (3000) : (starNumber),
+          starBaseNum: (starBaseNum == '') ? (3600) : (starBaseNum)
+        }
+        // starArguments.starDensity = (starDensity == '') ? (1 / 300) : (starDensity)
+        // starArguments.starNumber = (starNumber == '') ? (3000) : (starNumber)
+        // starArguments.starBaseNum = (starBaseNum == '') ? (3600) : (starBaseNum)
+
+        // 获取星河的参数
+        let milkyStarDensity = document.getElementById("milky-star-density").value
+        let milkyStarNumber = document.getElementById("milky-star-number").value
+        let milkyStarBaseNum = document.getElementById("milky-star-base-num").value
+        let milkyRiverWidth = document.getElementById("milky-river-width").value
+        let milkyArguments = {
+           milkyStarDensity: (milkyStarDensity == '') ? (1 / 80) : (milkyStarDensity),
+           milkyStarNumber : (milkyStarNumber == '') ? (6000) : (milkyStarNumber),
+           milkyStarBaseNum : (milkyStarBaseNum == '') ? (7000) : (milkyStarBaseNum),
+           milkyRiverWidth: (milkyRiverWidth == '') ? (100) : (milkyRiverWidth),
+        }
+
+        document.querySelectorAll("main")[0].style.visibility = 'visible'
+        
+        renderGalaxy(document.getElementById('galaxyCanvas'), starArguments) // 星空背景
+        renderMilkyWay(document.getElementById('galaxyMilkyWay'), milkyArguments) // 星河
+        renderConstellation(document.getElementById('constellationCanvas')) //星座
+        nebulaAnim(document.getElementById('nebulaCanvas')) //黑洞
+      })
+    
   </script>
 </body>
 
