@@ -92,6 +92,18 @@
         <input type="number" class="form-control" id="milky-river-width" placeholder="100-200">
       </div>
     </form>
+    <div>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> a星座
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> b星座
+      </label>
+      <label class="radio-inline">
+        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> c星座
+      </label>
+    </div>
+
     <button class="btn btn-default">确定</button>
   </div>
   <main class="main">
@@ -151,12 +163,12 @@
            milkyStarBaseNum : (milkyStarBaseNum == '') ? (7000) : (milkyStarBaseNum),
            milkyRiverWidth: (milkyRiverWidth == '') ? (100) : (milkyRiverWidth),
         }
-
+        let constellationOption = $('input:radio:checked').val()  // 获取星座选型
         document.querySelectorAll("main")[0].style.visibility = 'visible'
         
         renderGalaxy(document.getElementById('galaxyCanvas'), starArguments) // 星空背景
         renderMilkyWay(document.getElementById('galaxyMilkyWay'), milkyArguments) // 星河
-        renderConstellation(document.getElementById('constellationCanvas')) //星座
+        renderConstellation(document.getElementById('constellationCanvas'), constellationOption) //星座
         nebulaAnim(document.getElementById('nebulaCanvas')) //黑洞
         
         document.querySelectorAll(".page-header")[0].style.display = 'none'

@@ -15,7 +15,7 @@ function renderGalaxy(galaxyCanvas, starArguments) {
   // let starBaseNum = parseInt(galaxyCanvasWidth * galaxyCanvasHeight * starDensity) // 大概出现的星星数量
   // let initStarNum = starBaseNum + Math.random() * 40 - 20 // 初始数量
   let starArr = []
-  
+
   // 新增一颗星星
   let addRandomStar = function () {
     if (starArr.length > starBaseNum * 1.5) return // 5成随机波动
@@ -196,29 +196,98 @@ function renderMilkyWay(milkyWayCanvas, milkyArguments) {
  * 星座描绘
  * @param constellationCanvas
  */
-function renderConstellation (constellationCanvas) {
+function renderConstellation(constellationCanvas, constellationOption) {
   let constellationCtx = constellationCanvas.getContext('2d')
   let canvasWidth = constellationCanvas.width
   let canvasHeight = constellationCanvas.height
-   let starArr = [
-    {x: 75, y: 5},
-    {x: 75, y: 45},
-    {x: 75, y: 95},
-    {x: 75, y: 145},
-    {x: 35, y: 50},
-    {x: 115, y: 50},
-    {x: 15, y: 80},
-    {x: 135, y: 80}
-  ]
-  let lines = [
-    {from: 0, to: 1},
-    {from: 1, to: 2},
-    {from: 2, to: 3},
-    {from: 1, to: 4},
-    {from: 1, to: 5},
-    {from: 4, to: 6},
-    {from: 5, to: 7}
-  ] 
+
+  console.log(constellationOption)
+  switch (constellationOption) {
+    case '1':
+     var starArr = [
+        { x: 75, y: 15 },
+        { x: 75, y: 45 },
+        { x: 75, y: 95 },
+        { x: 75, y: 145 },
+        { x: 35, y: 50 },
+        { x: 115, y: 50 },
+        { x: 15, y: 80 },
+        { x: 135, y: 80 }
+      ]
+      lines = [
+        { from: 0, to: 1 },
+        { from: 1, to: 2 },
+        { from: 2, to: 3 },
+        { from: 1, to: 4 },
+        { from: 1, to: 5 },
+        { from: 4, to: 6 },
+        { from: 5, to: 7 }
+      ]
+      break;
+    case '2': 
+    console.log("执行了case2")
+      var  starArr = [
+        { x: 15, y: 15 },
+        { x: 35, y: 55 },
+        { x: 15, y: 95 },
+        { x: 35, y: 135 },
+        { x: 15, y: 175 },
+        { x: 75, y: 215 },
+        { x: 115, y: 195 },
+        { x: 155, y: 215 }
+      ]
+       lines = [
+        { from: 0, to: 1 },
+        { from: 1, to: 2 },
+        { from: 2, to: 3 },
+        { from: 3, to: 4 },
+        { from: 4, to: 5 },
+        { from: 5, to: 6 },
+        { from: 6, to: 7 }
+      ]
+      break;
+    default:
+       starArr = [
+        { x: 75, y: 15 },
+        { x: 75, y: 45 },
+        { x: 75, y: 95 },
+        { x: 75, y: 145 },
+        { x: 35, y: 50 },
+        { x: 115, y: 50 },
+        { x: 15, y: 80 },
+        { x: 135, y: 80 }
+      ]
+       lines = [
+        { from: 0, to: 1 },
+        { from: 1, to: 2 },
+        { from: 2, to: 3 },
+        { from: 1, to: 4 },
+        { from: 1, to: 5 },
+        { from: 4, to: 6 },
+        { from: 5, to: 7 }
+      ]
+      break;
+  }
+  //  let starArr = [
+  //   {x: 75, y: 15},
+  //   {x: 75, y: 45},
+  //   {x: 75, y: 95},
+  //   {x: 75, y: 145},
+  //   {x: 35, y: 50},
+  //   {x: 115, y: 50},
+  //   {x: 15, y: 80},
+  //   {x: 135, y: 80}
+  // ]
+  // let lines = [
+  //   {from: 0, to: 1},
+  //   {from: 1, to: 2},
+  //   {from: 2, to: 3},
+  //   {from: 1, to: 4},
+  //   {from: 1, to: 5},
+  //   {from: 4, to: 6},
+  //   {from: 5, to: 7}
+  // ]
+
 
   // let starArr = [
   //   {x: 15, y: 15},
