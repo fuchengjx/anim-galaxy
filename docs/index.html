@@ -108,7 +108,7 @@
   </div>
   <main class="main">
 
-    <div class="canvas-container"  style="width: 1200px;height: 700px;position: relative;overflow: hidden;margin: 20px auto;">
+    <div class="canvas-container"  style="width: 1200px;height: 900px;position: relative;overflow: hidden;margin: 20px auto;">
       <canvas class="canvas-galaxy" id="galaxyCanvas" width="1200px" height="900px"></canvas>
       <div class="planet-wrap">
         <div class="planet planet-2"></div>
@@ -147,9 +147,9 @@
         let starNumber = document.getElementById("star-number").value
         let starBaseNum = document.getElementById("star-base-num").value
         let starArguments = {
-          starDensity: (starDensity == '') ? (1 / 300) : (starDensity),
-          starNumber: (starNumber == '') ? (3000) : (starNumber),
-          starBaseNum: (starBaseNum == '') ? (3600) : (starBaseNum)
+           starDensity : starDensity || 1 / 300,
+           starNumber : starNumber || 3000,
+           starBaseNum : starBaseNum || 3600
         }
 
         // 获取星河的参数
@@ -158,10 +158,10 @@
         let milkyStarBaseNum = document.getElementById("milky-star-base-num").value
         let milkyRiverWidth = document.getElementById("milky-river-width").value
         let milkyArguments = {
-           milkyStarDensity: (milkyStarDensity == '') ? (1 / 80) : (milkyStarDensity),
-           milkyStarNumber : (milkyStarNumber == '') ? (6000) : (milkyStarNumber),
-           milkyStarBaseNum : (milkyStarBaseNum == '') ? (7000) : (milkyStarBaseNum),
-           milkyRiverWidth: (milkyRiverWidth == '') ? (100) : (milkyRiverWidth),
+           milkyStarDensity : milkyStarDensity || 1 / 80,
+           milkyStarNumber : milkyStarNumber || 6000,
+           milkyStarBaseNum : milkyStarBaseNum || 7000,
+           milkyRiverWidth : milkyRiverWidth || 100
         }
         let constellationOption = $('input:radio:checked').val()  // 获取星座选型
         document.querySelectorAll("main")[0].style.visibility = 'visible'
