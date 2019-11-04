@@ -201,7 +201,6 @@ function renderConstellation(constellationCanvas, constellationOption) {
   let canvasWidth = constellationCanvas.width
   let canvasHeight = constellationCanvas.height
 
-  console.log(constellationOption)
   switch (constellationOption) {
     case '1':
      var starArr = [
