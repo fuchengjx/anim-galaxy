@@ -202,49 +202,359 @@ function renderConstellation(constellationCanvas, constellationOption) {
   let canvasHeight = constellationCanvas.height
 
   switch (constellationOption) {
+	//白羊座
     case '1':
-     var starArr = [
-        { x: 75, y: 15 },
-        { x: 75, y: 45 },
-        { x: 75, y: 95 },
-        { x: 75, y: 145 },
-        { x: 35, y: 50 },
-        { x: 115, y: 50 },
-        { x: 15, y: 80 },
-        { x: 135, y: 80 }
-      ]
-      lines = [
-        { from: 0, to: 1 },
-        { from: 1, to: 2 },
-        { from: 2, to: 3 },
-        { from: 1, to: 4 },
-        { from: 1, to: 5 },
-        { from: 4, to: 6 },
-        { from: 5, to: 7 }
-      ]
-      break;
-    case '2': 
-    console.log("执行了case2")
-      var  starArr = [
-        { x: 15, y: 15 },
-        { x: 35, y: 55 },
-        { x: 15, y: 95 },
-        { x: 35, y: 135 },
-        { x: 15, y: 175 },
-        { x: 75, y: 215 },
-        { x: 115, y: 195 },
-        { x: 155, y: 215 }
-      ]
-       lines = [
-        { from: 0, to: 1 },
-        { from: 1, to: 2 },
-        { from: 2, to: 3 },
-        { from: 3, to: 4 },
-        { from: 4, to: 5 },
-        { from: 5, to: 6 },
-        { from: 6, to: 7 }
-      ]
-      break;
+		  var starArr =[
+			  {x: 60,y: 156},
+			  {x: 68,y: 132},
+			  {x: 56,y: 96},
+			  {x: 120,y: 52},
+			  {x: 130,y: 40},
+			  {x: 142,y: 46},
+			  {x: 140,y: 64},
+			  {x: 144,y: 72}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 3, to: 6},
+			  {from: 6, to: 7}
+		  ]
+		  break;
+		  
+	//金牛座
+	case '2':
+		  var starArr =[
+			  {x: 58,y: 42},
+			  {x: 78,y: 72},
+			  {x: 100,y: 102},
+			  {x: 100,y: 114},
+			  {x: 122,y: 126},
+			  {x: 154,y: 142},
+			  {x: 158,y: 158},
+			  {x: 44,y: 86},
+			  {x: 78,y: 114},
+			  {x: 120,y: 142},
+			  {x: 134,y: 152}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 5, to: 6},
+			  {from: 7, to: 8},
+			  {from: 8, to: 3},
+			  {from: 4, to: 9},
+			  {from: 9, to: 10}
+		  ]
+		  break;
+		  
+	//双子座
+	case '3':
+		  var starArr =[
+			  {x: 36,y: 74},
+			  {x: 50,y: 90},
+			  {x: 70,y: 110},
+			  {x: 78,y: 136},
+			  {x: 98,y: 154},
+			  {x: 102,y: 126},
+			  {x: 114,y: 156},
+			  {x: 56,y: 58},
+			  {x: 84,y: 64},
+			  {x: 122,y: 98},
+			  {x: 144,y: 120},
+			  {x: 166,y: 118},
+			  {x: 138,y: 150},
+			  {x: 44,y: 108},
+			  {x: 70,y: 86},
+			  {x: 96,y: 42}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 2, to: 5},
+			  {from: 5, to: 6},
+			  {from: 7, to: 8},
+			  {from: 8, to: 9},
+			  {from: 9, to: 10},
+			  {from: 10, to: 11},
+			  {from: 9, to: 12},
+			  {from: 13, to: 1},
+			  {from: 1, to: 14},
+			  {from: 14, to: 8},
+			  {from: 8, to: 15}
+		  ]
+		  break;
+		  
+	//巨蟹座
+	case '4':
+		  var starArr =[
+			  {x: 32,y: 78},
+			  {x: 54,y: 72},
+			  {x: 104,y: 98},
+			  {x: 114,y: 130},
+			  {x: 166,y: 156},
+			  {x: 88,y: 42}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 2, to: 5}
+		  ]
+		  break;
+		  
+	//狮子座
+	case '5':
+		  var starArr =[
+			  {x: 32,y: 150},
+			  {x: 46,y: 134},
+			  {x: 78,y: 154},
+			  {x: 142,y: 106},
+			  {x: 128,y: 78},
+			  {x: 110,y: 74},
+			  {x: 94,y: 54},
+			  {x: 108,y: 48},
+			  {x: 120,y: 54}, 
+			  {x: 170,y: 112}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 5, to: 6},
+			  {from: 7, to: 8},
+			  {from: 3, to: 9}
+		  ]
+		  break;
+		  
+	//处女座
+	case '6':
+		  var starArr =[
+			  {x: 32,y: 118},
+			  {x: 70,y: 126},
+			  {x: 88,y: 140},
+			  {x: 124,y: 102},
+			  {x: 154,y: 92},
+			  {x: 168,y: 74},
+			  {x: 120,y: 84},
+			  {x: 130,y: 52},
+			  {x: 68,y: 150}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 3, to: 6},
+			  {from: 6, to: 7},
+			  {from: 2, to: 8}
+		  ]
+		  break;
+		  
+	//天秤座
+	case '7':
+		  var starArr =[
+			  {x: 32,y: 134},
+			  {x: 68,y: 120},
+			  {x: 120,y: 54},
+			  {x: 150,y: 46},
+			  {x: 168,y: 94},
+			  {x: 126,y: 148},
+			  {x: 102,y: 156}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 5, to: 6}
+		  ]
+		  break;
+		  
+	//天蝎座
+	case '8':
+		  var starArr =[
+			  {x: 34,y: 100},
+			  {x: 56,y: 126},
+			  {x: 38,y: 140},
+			  {x: 56,y: 156},
+			  {x: 82,y: 154},
+			  {x: 98,y: 144},
+			  {x: 114,y: 110},
+			  {x: 118,y: 88},
+			  {x: 138,y: 62},
+			  {x: 148,y: 42},
+			  {x: 164,y: 58},
+			  {x: 158,y: 88},
+			  {x: 146,y: 100},
+			  {x: 76,y: 94}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 5, to: 6},
+			  {from: 6, to: 7},
+			  {from: 7, to: 8},
+			  {from: 8, to: 9},
+			  {from: 9, to: 10},
+			  {from: 10, to: 11},
+			  {from: 11, to: 12},
+			  {from: 1, to: 13},
+			  {from: 8, to: 11}
+		  ]
+		  break;
+		  
+	//射手座
+	case '9':
+		  var starArr =[
+			  {x: 44,y: 132},
+			  {x: 48,y: 102},
+			  {x: 90,y: 80},
+			  {x: 108,y: 74},
+			  {x: 118,y: 86},
+			  {x: 132,y: 100},
+			  {x: 126,y: 120},
+			  {x: 132,y: 134},
+			  {x: 148,y: 106},
+			  {x: 154,y: 78},
+			  {x: 98,y: 94},
+			  {x: 58,y: 136},
+			  {x: 60,y: 156},
+			  {x: 96,y: 42},
+			  {x: 104,y: 54},
+			  {x: 118,y: 58}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 5, to: 6},
+			  {from: 6, to: 7},
+			  {from: 7, to: 8},
+			  {from: 8, to: 9},
+			  {from: 2, to: 10},
+			  {from: 10, to: 11},
+			  {from: 11, to: 12},
+			  {from: 10, to: 4},
+			  {from: 13, to: 14},
+			  {from: 14, to: 15},
+			  {from: 15, to: 3},
+			  {from: 14, to: 3}
+		  ]
+		  break;  
+		  
+	//摩羯座
+	case '10':
+		  var starArr =[
+			  {x: 156,y: 42},
+			  {x: 156,y: 68},
+			  {x: 150,y: 90},
+			  {x: 150,y: 140},
+			  {x: 138,y: 156},
+			  {x: 62,y: 132},
+			  {x: 44,y: 98},
+			  {x: 60,y: 106},
+			  {x: 106,y: 108}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 5, to: 6},
+			  {from: 6, to: 7},
+			  {from: 7, to: 8},
+			  {from: 8, to: 1}
+		  ]
+		  break;	  
+		
+	//水瓶座
+	case '11':
+		  var starArr =[
+			  {x: 90,y: 42},
+			  {x: 74,y: 70},
+			  {x: 54,y: 102},
+			  {x: 60,y: 116},
+			  {x: 58,y: 128},
+			  {x: 96,y: 158},
+			  {x: 102,y: 142},
+			  {x: 116,y: 136},
+			  {x: 146,y: 148},
+			  {x: 86,y: 106},
+			  {x: 106,y: 94}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 5, to: 6},
+			  {from: 6, to: 7},
+			  {from: 7, to: 8},
+			  {from: 2, to: 9},
+			  {from: 9, to: 10}
+		  ]
+		  break;	  
+		  
+	//双鱼座
+	case '12':
+		  var starArr =[
+			  {x: 56,y: 86},
+			  {x: 56,y: 106},
+			  {x: 72,y: 146},
+			  {x: 86,y: 156},
+			  {x: 100,y: 140},
+			  {x: 106,y: 124},
+			  {x: 114,y: 116},
+			  {x: 126,y: 86},
+			  {x: 134,y: 78},
+			  {x: 148,y: 78},
+			  {x: 154,y: 68},
+			  {x: 144,y: 60},
+			  {x: 150,y: 44},
+			  {x: 46,y: 100},
+			  {x: 132,y: 66}
+		  ]
+		  lines = [
+			  {from: 0, to: 1},
+			  {from: 1, to: 2},
+			  {from: 2, to: 3},
+			  {from: 3, to: 4},
+			  {from: 4, to: 5},
+			  {from: 5, to: 6},
+			  {from: 6, to: 7},
+			  {from: 7, to: 8},
+			  {from: 8, to: 9},
+			  {from: 9, to: 10},
+			  {from: 10, to: 11},
+			  {from: 11, to: 12},
+			  {from: 0, to: 13},
+			  {from: 13, to: 1},
+			  {from: 8, to: 14},
+			  {from: 14, to: 11}
+		  ]
+		  break;
+		  
     default:
        starArr = [
         { x: 75, y: 15 },
@@ -267,46 +577,6 @@ function renderConstellation(constellationCanvas, constellationOption) {
       ]
       break;
   }
-  //  let starArr = [
-  //   {x: 75, y: 15},
-  //   {x: 75, y: 45},
-  //   {x: 75, y: 95},
-  //   {x: 75, y: 145},
-  //   {x: 35, y: 50},
-  //   {x: 115, y: 50},
-  //   {x: 15, y: 80},
-  //   {x: 135, y: 80}
-  // ]
-  // let lines = [
-  //   {from: 0, to: 1},
-  //   {from: 1, to: 2},
-  //   {from: 2, to: 3},
-  //   {from: 1, to: 4},
-  //   {from: 1, to: 5},
-  //   {from: 4, to: 6},
-  //   {from: 5, to: 7}
-  // ]
-
-
-  // let starArr = [
-  //   {x: 15, y: 15},
-  //   {x: 35, y: 55},
-  //   {x: 15, y: 95},
-  //   {x: 35, y: 135},
-  //   {x: 15, y: 175},
-  //   {x: 75, y: 215},
-  //   {x: 115, y: 195},
-  //   {x: 155, y: 215}
-  // ]
-  // let lines = [
-  //   {from: 0, to: 1},
-  //   {from: 1, to: 2},
-  //   {from: 2, to: 3},
-  //   {from: 3, to: 4},
-  //   {from: 4, to: 5},
-  //   {from: 5, to: 6},
-  //   {from: 6, to: 7}
-  // ]
 
   function render () {
     constellationCtx.clearRect(0, 0, canvasWidth, canvasHeight)
@@ -318,14 +588,14 @@ function renderConstellation(constellationCanvas, constellationOption) {
     for (let i = 0; i < lines.length; i++) {
       renderLine(lines[i])
     }
-    constellationCtx.strokeStyle = 'rgba(255,255,255,.1)'
+    constellationCtx.strokeStyle = 'rgba(255,255,255,.2)'
     constellationCtx.stroke()
   }
 
   // 渲染星星的方法
   function renderStar (star) {
     constellationCtx.beginPath()
-    let r = 1
+    let r = 2
     r += 0.15 * time
     constellationCtx.arc(star.x, star.y, r, 0, 2 * Math.PI)
     let alpha = 0.4
