@@ -10,6 +10,9 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   <title>星空图</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="anim-galaxy.css">
   <style>
     * {
       padding: 0;
@@ -26,10 +29,34 @@
       padding: 5rem 6rem;
       margin: 0 auto !important;
       color: #fff; 
-      text-align: center; 
+      text-align: center;
       background-color: #159957; 
       background-image: linear-gradient(120deg, #155799, #159957);
     }
+	
+	  .page-container {
+		  display: flex;
+		  margin: 40px 0px;
+	  }
+	  
+	  .page-right {
+		  margin: 0px 100px;
+		  width: 550px;
+	  }
+	  
+	  .form-group {
+		margin-top: 30px;
+		  width: 350px;
+		  text-align: right;
+	}
+	  .radio-inline+.radio-inline {
+		margin-top: 20px;
+		margin-left: 20px;
+	}
+	  #radio-inline1 {
+		margin-top: 20px;
+		margin-left: 20px;
+	  }
     .page-header .btn{
       display: inline-block;
       margin-top: 2rem;
@@ -52,87 +79,100 @@
       visibility: hidden;
     }
   </style>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
-    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" type="text/css" href="anim-galaxy.css">
+  
 </head>
 
 <body>
   <div class="page-header">
     <h1>菜单栏</h1>
-    <form class="form-inline">
-      <h3>星空背景参数</h3>
-      <div class="form-group">
-        <label for="star-density">星星密度</label>
-        <input type="number" class="form-control" id="star-density" placeholder="0-0.05">
-      </div>
-      <div class="form-group">
-        <label for="star-number">星星初始数量</label>
-        <input type="number" class="form-control" id="star-number" placeholder="1000-3000">
-      </div>
-      <div class="form-group">
-        <label for="star-base-num">最后出现的星星数量</label>
-        <input type="number" class="form-control" id="star-base-num" placeholder="1000-5000">
-      </div>
-    </form>
-    <form class="form-inline">
-      <h3>星河背景参数</h3>
-      <div class="form-group">
-        <label for="milky-star-density">星星密度</label>
-        <input type="number" class="form-control" id="milky-star-density" placeholder="0-0.05">
-      </div>
-      <div class="form-group">
-        <label for="milky-star-number">星星初始数量</label>
-        <input type="number" class="form-control" id="milky-star-number" placeholder="3000-5000">
-      </div>
-      <div class="form-group">
-        <label for="milky-star-base-num">最后出现的星星数量</label>
-        <input type="number" class="form-control" id="milky-star-base-num" placeholder="3000-10000">
-      </div>
-      <div class="form-group">
-        <label for="milky-river-width">星河宽度</label>
-        <input type="number" class="form-control" id="milky-river-width" placeholder="100-200">
-      </div>
-    </form>
-    <div>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> 白羊座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> 金牛座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> 双子座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4"> 巨蟹座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5"> 狮子座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="6"> 处女座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio7" value="7"> 天秤座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio8" value="8"> 天蝎座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio9" value="9"> 射手座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio10" value="10"> 摩羯座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio11" value="11"> 水瓶座
-      </label>
-      <label class="radio-inline">
-        <input type="radio" name="inlineRadioOptions" id="inlineRadio12" value="12"> 双鱼座
-      </label>
-      
+    <div class="page-container">
+    	<div class="page-left">
+    		 <form class="form-inline">
+		  <h3>星空背景参数</h3>
+		  <div class="form-group">
+			<label for="star-density">星星密度</label>
+			<input type="number" class="form-control" id="star-density" placeholder="0-0.05">
+		  </div>
+		  <div class="form-group">
+			<label for="star-number">星星初始数量</label>
+			<input type="number" class="form-control" id="star-number" placeholder="1000-3000">
+		  </div>
+		  <div class="form-group">
+			<label for="star-base-num">最后出现的星星数量</label>
+			<input type="number" class="form-control" id="star-base-num" placeholder="1000-5000">
+		  </div>
+		</form>
+    	</div>
+    	
+   		<div>
+   			<form class="form-inline">
+		  <h3>星河背景参数</h3>
+		  <div class="form-group">
+			<label for="milky-star-density">星星密度</label>
+			<input type="number" class="form-control" id="milky-star-density" placeholder="0-0.05">
+		  </div>
+		  <div class="form-group">
+			<label for="milky-star-number">星星初始数量</label>
+			<input type="number" class="form-control" id="milky-star-number" placeholder="3000-5000">
+		  </div>
+		  <div class="form-group">
+			<label for="milky-star-base-num">最后出现的星星数量</label>
+			<input type="number" class="form-control" id="milky-star-base-num" placeholder="3000-10000">
+		  </div>
+		  <div class="form-group">
+			<label for="milky-river-width">星河宽度</label>
+			<input type="number" class="form-control" id="milky-river-width" placeholder="100-200">
+		  </div>
+		</form>
+   		</div>
+    	
+   	  	
+   		<div class="page-right">
+   		<h3>星座选择</h3>
+		  <label class="radio-inline" id="radio-inline1">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="1"> 白羊座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="2"> 金牛座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio3" value="3"> 双子座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio4" value="4"> 巨蟹座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio5" value="5"> 狮子座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio6" value="6"> 处女座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio7" value="7"> 天秤座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio8" value="8"> 天蝎座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio9" value="9"> 射手座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio10" value="10"> 摩羯座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio11" value="11"> 水瓶座
+		  </label>
+		  <label class="radio-inline">
+			<input type="radio" name="inlineRadioOptions" id="inlineRadio12" value="12"> 双鱼座
+		  </label>
+
+		</div>
+    	  
     </div>
+   	
+   
+    
+
 
     <button class="btn btn-default">确定</button>
   </div>
@@ -141,6 +181,10 @@
     <div class="canvas-container"  style="width: 1200px;height: 900px;position: relative;overflow: hidden;margin: 20px auto;">
       <canvas class="canvas-galaxy" id="galaxyCanvas" width="1200px" height="900px"></canvas>
       <div class="planet-wrap">
+<!--
+      <div class="planet planet"></div>
+       <div class="planet planet-1"></div>
+-->
         <div class="planet planet-2"></div>
         <div class="planet planet-3"></div>
         <div class="planet planet-8"></div>

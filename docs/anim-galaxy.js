@@ -108,8 +108,9 @@ function renderGalaxy(galaxyCanvas, starArguments) {
   }
 }
 
+// 渲染星河
 function renderMilkyWay(milkyWayCanvas, milkyArguments) {
-  // 渲染星河
+  
   let galaxyCtx = milkyWayCanvas.getContext('2d')
   let galaxyCanvasWidth = milkyWayCanvas.clientWidth
   let galaxyCanvasHeight = milkyWayCanvas.clientHeight
